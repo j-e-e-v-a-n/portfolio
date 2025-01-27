@@ -424,6 +424,33 @@ nav .container {
 .portfolio-link:hover {
     background: rgba(100, 255, 218, 0.1);
 }
+/* Github trophies */
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.github-status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.github-stats-item img,
+.github-trophy img {
+    width: 100%;
+    max-width: 600px;
+    margin: 10px auto;
+}
 
 /* Contact Section */
 .contact {
