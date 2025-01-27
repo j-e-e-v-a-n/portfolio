@@ -1,68 +1,423 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy New Year</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body, html {
-      height: 100%;
-      font-family: 'Arial', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background-color: #000;
-    }
-
-    .video-background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
-
-    .message-container {
-      color: #fff;
-      font-size: 3rem;
-      font-weight: bold;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    audio {
-      display: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeevan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./images/resume.png" type="image/x-icon">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <meta property="og:image" content="./images/aboutimg.jpg">
+    <meta property="og:image:alt" content="THUMBNAIL">
+    <meta property="og:image:type" content="image/jpeg">
 </head>
 <body>
+    <!-- Animated Background -->
+    <div class="animated-background">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
 
-  <!-- Video background -->
-  <video class="video-background" autoplay muted loop>
-    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">WEBLOOM</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-  <!-- Happy New Year message -->
-  <div class="message-container">
-    Happy New Year!
-  </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="typing-container">
+                    <h1>Hi, I'm <span class="highlight">Jeevan</span></h1>
+                    <h2 class="typing-text">DEV of Webloom</h2>
+                </div>
+                <p class="fade-in">Crafting innovative web solutions that bring your vision to life.</p>
+                <div class="cta-container">
+                    <a href="#portfolio" class="cta-button">View My Work</a>
+                    <a href="#contact" class="cta-button secondary">Let's Connect</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Audio -->
-  <audio autoplay loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text reveal-on-scroll">
+                    <p>As the CEO of Webloom, I lead a web development service dedicated to crafting high-quality static and full-stack websites. My passion lies in creating innovative and responsive web solutions that perfectly align with client needs and exceed their expectations.</p>
+                    <p>With extensive experience in building and delivering websites, including feature-rich e-commerce platforms, I bring a comprehensive understanding of both technical excellence and business value to every project.</p>
+                </div>
+                <div class="about-image floating">
+                    <img src="./images/aboutimg.jpg" alt="Workspace">
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category reveal-on-scroll">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-bars">
+                        <div class="skill">
+                            <span class="skill-name">C</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="52"></div></div>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">C++</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="74"></div></div>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Java</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="69"></div></div>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="88"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category reveal-on-scroll">
+                    <h3>Web Development</h3>
+                    <div class="skill-bars">
+                        <div class="skill">
+                            <span class="skill-name">HTML/CSS</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="92"></div></div>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="84"></div></div>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">TypeScript</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="72"></div></div>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">React.js</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="78"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category reveal-on-scroll">
+                    <h3>Backend Development</h3>
+                    <div class="skill-bars">
+                        <div class="skill">
+                            <span class="skill-name">Node.js</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Express.js</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="70"></div></div>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">MongoDB</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="75"></div></div>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">JWT</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="66"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category reveal-on-scroll">
+                    <h3>Tools & Platforms</h3>
+                    <div class="skill-bars">
+                        <div class="skill">
+                            <span class="skill-name">Vercel</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="72"></div></div>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Render</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="64"></div></div>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Git/GitHub</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="67"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category reveal-on-scroll">
+                    <h3>Design & Multimedia</h3>
+                    <div class="skill-bars">
+                        <div class="skill">
+                            <span class="skill-name">Canva</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="53"></div></div>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Adobe Lightroom</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="47"></div></div>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Figma</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="55"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category reveal-on-scroll">
+                    <h3>Other Technologies</h3>
+                    <div class="skill-bars">
+                        <div class="skill">
+                            <span class="skill-name">Arduino</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="66"></div></div>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Socket.io</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="57"></div></div>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Firebase</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="62"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item reveal-on-scroll">
+                    <div class="portfolio-content">
+                        <img src="./images/webloom.png" alt="E-commerce Project">
+                        <div class="portfolio-overlay">
+                            <h3>WebLoom</h3>
+                            <p>A complete e-commerce solution with dynamic product listing and cart functionality.</p>
+                            <div class="tech-stack">
+                                <span>React.js</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                            <a href="https://weblo0m.vercel.app" target="_blank" class="portfolio-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item reveal-on-scroll">
+                    <div class="portfolio-content">
+                        <img src="./images/gths.png" alt="Static Website">
+                        <div class="portfolio-overlay">
+                            <h3>School Website</h3>
+                            <p>A responsive static website with modern design and animations.</p>
+                            <div class="tech-stack">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <a href="https://gthsvarappetty.com" target="_blank" class="portfolio-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item reveal-on-scroll">
+                    <div class="portfolio-content">
+                        <img src="images/mern.png" alt="Full Stack Project">
+                        <div class="portfolio-overlay">
+                            <h3>E-commerce Website</h3>
+                            <p>A full-stack E-commerce application with real-time data visualization.</p>
+                            <div class="tech-stack">
+                                <span>React</span>
+                                <span>Express</span>
+                                <span>MongoDB</span>
+                            </div>
+                            <a href="https://webloomecommerce1.vercel.app/" target="_blank" class="portfolio-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item reveal-on-scroll">
+                    <div class="portfolio-content">
+                        <img src="images/windot.png" alt="WinDot Backpacks">
+                        <div class="portfolio-overlay">
+                            <h3>WinDot Backpacks</h3>
+                            <p>A stylish website for WinDot backpacks featuring modern design elements.</p>
+                            <div class="tech-stack">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <a href="https://windot-backpacks.vercel.app/" target="_blank" class="portfolio-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item reveal-on-scroll">
+                    <div class="portfolio-content">
+                        <img src="images/nas.png" alt="Resin Art Website">
+                        <div class="portfolio-overlay">
+                            <h3>Resin Artwork Showcase</h3>
+                            <p>A website designed to showcase beautiful resin art.</p>
+                            <div class="tech-stack">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <a href="https://nas-group.vercel.app/" target="_blank" class="portfolio-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item reveal-on-scroll">
+                    <div class="portfolio-content">
+                        <img src="images/portfolio.png" alt="Portfolio Website">
+                        <div class="portfolio-overlay">
+                            <h3>My Portfolio</h3>
+                            <p>A personal portfolio website to showcase my projects and skills.</p>
+                            <div class="tech-stack">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <a href="https://jeevanfolio.vercel.app" target="_blank" class="portfolio-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+    <section class="center-content">
+        <!-- GitHub Stats Section -->
+        <section id="github-stats" class="github-stats">
+            <div class="container">
+                <h2 class="section-title">GitHub Stats</h2>
+                <div class="github-status-grid">
+                    <div class="github-stats-item">
+                        <h3>GitHub Stats</h3>
+                        <img src="https://github-readme-stats.vercel.app/api?username=J-e-e-v-a-n&theme=dark&hide_border=false&include_all_commits=false&count_private=false" alt="GitHub Stats" />
+                    </div>
+                    <div class="github-stats-item">
+                        <h3>Top Languages</h3>
+                        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=J-e-e-v-a-n&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact" alt="Top Languages" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- GitHub Trophies Section -->
+        <section id="github-trophies" class="github-trophies">
+            <div class="container">
+                <h2 class="section-title">GitHub Trophies</h2>
+                <div class="github-trophy">
+                    <img src="https://github-profile-trophy.vercel.app/?username=J-e-e-v-a-n&theme=radical&no-frame=false&no-bg=true&margin-w=4" alt="GitHub Trophies" style="width: 100%; height: auto; max-width: 100%;" />
+                </div>
+            </div>
+        </section>
+    </section>
+    
+    
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-content">
+                <div class="contact-info reveal-on-scroll">
+                    <h3>Ready to start your project?</h3>
+                    <p>Let's discuss how Webloom can help bring your vision to life with cutting-edge web solutions!</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <a href="mailto:webloom.ceo@gmail.com">webloom.ceo@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">🌐</span>
+                            <a href="https://weblo0m.vercel.app">webloom.com</a>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link">GitHub</a>
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+                <form id="contact-form" class="contact-form reveal-on-scroll">
+                    <div class="form-group">
+                        <input type="text" name="from_name" id="from_name" required placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="from_email" id="from_email" required placeholder="Your Email">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" id="message" required placeholder="Tell me about your project"></textarea>
+                    </div>
+                    <button type="submit" class="submit-button" id="submitButton">Send Message</button>
+                </form>
+                <div class="plane-container" id="plane-container">
+                    <div class="plane"></div>
+                </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Webloom. All rights reserved.</p>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        // Initialize EmailJS
+        emailjs.init('4HwUkWvJLpV6Z74_I');
+    
+        const submitButton = document.getElementById('submitButton');
+        const planeContainer = document.getElementById('plane-container');
+    
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+    
+            submitButton.textContent = 'Sending...'; // Change button text to 'Sending...'
+            submitButton.disabled = true; // Disable the button to prevent multiple clicks
+    
+            const serviceID = 'service_uhtjbxi';
+            const templateID = 'template_c41cq96';
+    
+            // Send email
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    submitButton.textContent = 'Message Sent'; // Change button text to 'Sent'
+    
+                    // Show paper plane animation
+                    planeContainer.style.display = 'block';
+    
+                    setTimeout(() => {
+                        planeContainer.style.display = 'none'; // Hide plane after animation
+                        submitButton.textContent = 'Send Message'; // Reset button text
+                        submitButton.disabled = false; // Re-enable the button
+                    }, 2000); // Keep 'Sent' for 2 seconds before resetting
+                })
+                .catch((err) => {
+                    submitButton.textContent = 'Send Message'; // Reset button text in case of error
+                    submitButton.disabled = false; // Re-enable the button
+                    console.error('EmailJS Error:', err); // Log error
+                });
+        });
+    </script>
+    
+    <script src="script.js"></script>
 </body>
 </html>
