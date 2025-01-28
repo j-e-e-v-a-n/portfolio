@@ -631,6 +631,7 @@ footer {
     transform: translateY(0);
 }
 
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
